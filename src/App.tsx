@@ -5,6 +5,7 @@ import AuthForm from './components/AuthForm';
 import Dashboard from './components/Dashboard';
 import Portfolio from "./components/Portfolio.tsx";
 import NotFound from "./components/NotFound.tsx";
+import { Analytics } from "@vercel/analytics/react"
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   const { currentUser, loading } = useAuth();
