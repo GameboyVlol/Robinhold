@@ -1,11 +1,16 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './contexts/AuthContext';
-import AuthForm from './components/AuthForm';
-import Dashboard from './components/Dashboard';
-import Portfolio from "./components/Portfolio.tsx";
-import NotFound from "./components/NotFound.tsx";
-import { Analytics } from "@vercel/analytics/react"
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import AuthForm from "./components/pages/AuthForm";
+import Dashboard from "./components/pages/Dashboard";
+import Portfolio from "./components/pages/Portfolio";
+// import NotFound from "./components/pagesNotFound";
+import { useAuth } from "./contexts/AuthContext.tsx";
+import NotFound from "./components/pages/NotFound";
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   const { currentUser, loading } = useAuth();
@@ -29,32 +34,35 @@ function PublicRoute({ children }: { children: React.ReactNode }) {
 function App() {
   return (
     <Router>
-      <AuthProvider>
-        <div className="min-h-screen bg-gray-100">
-          <div className="container mx-auto py-12 px-4">
-            <Routes>
-              <Route path="/login" element={
-                <PublicRoute>
-                  <div className="flex justify-center items-center">
-                    <AuthForm />
-                  </div>
-                </PublicRoute>
-              } />
-              <Route path="/dashboard" element={
-                <PrivateRoute>
-                  <Dashboard />
-                </PrivateRoute>
-              } />
-              <Route path="/portfolio" element={
-                <PrivateRoute>
-                  <Portfolio />
-                </PrivateRoute>
-              } />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
-        </div>
-      </AuthProvider>
+      <Routes>
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <div className="flex justify-center items-center">
+                <AuthForm />
+              </div>
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/portfolio"
+          element={
+            <PrivateRoute>
+              <Portfolio />
+            </PrivateRoute>
+          }
+        />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </Router>
   );
 }

@@ -1,3 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body,
+#root,
+.app,
+.content {
+  height: 100%;
+  width: 100%;
+  font-family: "Source Code Pro", sans-serif;
+}
+
+.app {
+  display: flex;
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* track */
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+/* handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* handle on hover*/
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
