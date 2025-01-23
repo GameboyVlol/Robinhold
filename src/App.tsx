@@ -5,12 +5,18 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import AuthForm from "./components/pages/AuthForm";
+import { useAuth } from "./contexts/AuthContext";
 import Dashboard from "./components/pages/Dashboard";
-import Portfolio from "./components/pages/Portfolio";
-// import NotFound from "./components/pagesNotFound";
-import { useAuth } from "./contexts/AuthContext.tsx";
 import NotFound from "./components/pages/NotFound";
+import AuthForm from "./components/pages/AuthForm";
+import Portfolio from "./components/pages/Portfolio";
+import OrderBook from "./components/pages/OrderBook";
+// import {
+//   Dashboard,
+//   NotFound,
+//   AuthForm,
+//   Portfolio,
+// } from "./components/pages/LazyLoad";
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
   const { currentUser, loading } = useAuth();
@@ -58,6 +64,14 @@ function App() {
           element={
             <PrivateRoute>
               <Portfolio />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/orderbook"
+          element={
+            <PrivateRoute>
+              <OrderBook />
             </PrivateRoute>
           }
         />

@@ -1,11 +1,41 @@
 import React from "react";
-// import { useAuth } from "../contexts/AuthContext";
-import Topbar from "../organisms/Topbar";
-import Sidebar from "../organisms/Sidebar";
+import { Box, styled, useTheme } from "@mui/material";
+import { tokens } from "../../themes/theme";
+import Layout from "../templates/Layout";
 import BarChart from "../atoms/shapes/Barchart";
-import { Box } from "@mui/material";
 
+
+const StyledHeader = styled("span")(({ theme }) => ({
+  lineHeight: 1,
+  fontSize: theme.fontSizes.smallerBody,
+  color: theme.palette.secondary.main,
+  fontWeight: theme.typography.fontWeightRegular,
+  marginRight: "auto",
+}));
+
+const StyledValue = styled("span")(({ theme }) => ({
+  fontSize: "1.0 rem",
+  lineHeight: 1,
+  lineClamp: `1`,
+  WebkitLineClamp: 1,
+  display: "-webkit-box",
+  textOverflow: "ellipsis",
+  overflow: "hidden",
+  alignItems: "flex-start",
+  wordBreak: "break-word",
+  maxWidth: "100%",
+  fontWeight: theme.typography.fontWeightBold,
+}));
+
+const StyledValueBox = styled("div")(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  gap: theme.spacing(0.5),
+  margin: theme.spacing(0, 0, 0, 1),
+}));
 export default function Dashboard() {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
   // const { currentUser, logout } = useAuth();
 
   // async function handleLogout() {
@@ -17,15 +47,47 @@ export default function Dashboard() {
   // }
 
   return (
-    <div className="app">
-      <main className="content">
-        <Topbar />
-        <Box sx={{ display: "flex", flexDirection: "row" }}>
-          <Sidebar />
+    <Layout>
+      <>
+        <Box m="20px">
+          <Box>
+            <Box>Custom Projection</Box>
+          </Box>
+          <Box
+            display="grid"
+            gridTemplateColumns="repeat(12, 1fr)"
+            gridAutoRows="60px"
+            gap="20px"
+          >
+            <Box
+              gridColumn="span 6"
+              backgroundColor={colors.primary[400]}
+              display="grid"
+              gridTemplateColumns="repeat(3, 1fr)"
+              borderRadius={2}
+              alignItems="center"
+              padding="0px 30px"
+            >
+              <StyledValueBox>
+                <StyledHeader>Portofio-start-state</StyledHeader>
+                <StyledValue>$9000.90</StyledValue>
+              </StyledValueBox>
+              <StyledValueBox>
+                <StyledHeader>Portolio-start-state</StyledHeader>
+                <StyledValue>$8827.72</StyledValue>
+              </StyledValueBox>
+              <StyledValueBox>
+                <StyledHeader>Health factor</StyledHeader>
+                <StyledValue>$8827.72</StyledValue>
+              </StyledValueBox>
+            </Box>
+          </Box>
           <BarChart />
         </Box>
-      </main>
-    </div>
+      </>
+    </Layout>
+
+    // </div>
     // <div className="max-w-4xl mx-auto p-6">
     //   Dashboard
     //   <div className="w-[300] bg-blue-500">

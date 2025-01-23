@@ -4,62 +4,38 @@ import { Typography, useTheme} from '@mui/material';
 import { tokens } from "../../../themes/theme";
 
 
+// ... existing code ...
+
 const data = [
   {
-    id: "japan",
-    color: "hsl(48, 70%, 50%)",
+    id: "AAPL",
+    color: "hsl(210, 70%, 50%)",
     data: [
-      {
-        x: "plane",
-        y: 292,
-      },
-      {
-        x: "helicopter",
-        y: 197,
-      },
-      {
-        x: "boat",
-        y: 295,
-      },
-      {
-        x: "train",
-        y: 101,
-      },
-      {
-        x: "subway",
-        y: 44,
-      },
-      {
-        x: "bus",
-        y: 277,
-      },
-      {
-        x: "car",
-        y: 78,
-      },
-      {
-        x: "moto",
-        y: 138,
-      },
-      {
-        x: "bicycle",
-        y: 220,
-      },
-      {
-        x: "horse",
-        y: 139,
-      },
-      {
-        x: "skateboard",
-        y: 218,
-      },
-      {
-        x: "others",
-        y: 207,
-      },
+      { x: "2023-01-01", y: 75 },
+      { x: "2023-01-08", y: 72 },
+      { x: "2023-01-15", y: 74 },
+      { x: "2023-01-22", y: 70 },
+      { x: "2023-02-01", y: 68 },
+      { x: "2023-02-08", y: 69 },
+      { x: "2023-02-15", y: 71 },
+      { x: "2023-02-22", y: 73 },
+      { x: "2023-03-01", y: 76 },
+      { x: "2023-03-08", y: 74 },
+      { x: "2023-03-15", y: 72 },
+      { x: "2023-03-22", y: 70 },
+      { x: "2023-04-01", y: 69 },
+      { x: "2023-04-08", y: 71 },
+      { x: "2023-04-15", y: 73 },
+      { x: "2023-04-22", y: 75 },
+      { x: "2023-05-01", y: 77 },
+      { x: "2023-05-08", y: 76 },
+      { x: "2023-05-15", y: 74 },
+      { x: "2023-05-22", y: 72 },
     ],
   },
 ];
+
+// ... existing code ...
 
 
 /**
@@ -73,11 +49,19 @@ const data = [
 function Barchart({isDashboard = false}: {isDashboard: boolean}) {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+    
+    //this is style for website
+    
     return (
-    <div style={{ width: "700px", height: "300px", backgroundColor: colors.primary[400], borderRadius: '10px', padding: '10px'}}>
-      <Typography variant="h5">Hello</Typography>
+    <div style={{ width: "700px", height: "300px", backgroundColor: colors.primary[400], borderRadius: '10px', padding: '10px', margin:'100px'}}>
       <ResponsiveLine
         data={data}
+        enableArea
+        areaBaselineValue={68}
+        lineWidth={3}
+        enableSlices={'x'}
+        enableCrosshair={false}
+        animate={true}
         theme={{
             axis:{
                 domain:{
@@ -111,7 +95,7 @@ function Barchart({isDashboard = false}: {isDashboard: boolean}) {
                 }
             }
         }}
-        colors={{scheme: 'nivo'}}
+        colors={{"scheme":'dark2'}}
         margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
         xScale={{ type: "point" }}
         yScale={{
@@ -122,7 +106,7 @@ function Barchart({isDashboard = false}: {isDashboard: boolean}) {
           reverse: false,
         }}
         yFormat=" >-.2f"
-        curve="catmullRom"
+        curve="linear"
         axisTop={null}
         axisRight={null}
         axisBottom={{
