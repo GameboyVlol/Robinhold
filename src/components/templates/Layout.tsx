@@ -11,9 +11,9 @@ function Layout({children}:{children: React.ReactNode}) {
           <MainSidebar />
           <Box sx={{ display: "flex", flexDirection: "column", width: "100%" }}>
             <Topbar />
-            {/* <Suspense fallback={<div>Loading...</div>}> */}
+            <React.Suspense fallback={<div>Loading...</div>}>
                 {children}
-            {/* </Suspense> */}
+            </React.Suspense>
             </Box>
         </Box>
       </main>

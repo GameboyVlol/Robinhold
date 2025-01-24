@@ -1,6 +1,6 @@
 import React from "react";
 import { ResponsiveLine } from "@nivo/line";
-import { Typography, useTheme} from '@mui/material';
+import { useTheme} from '@mui/material';
 import { tokens } from "../../../themes/theme";
 
 

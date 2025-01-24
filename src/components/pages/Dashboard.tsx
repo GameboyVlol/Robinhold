@@ -2,7 +2,8 @@ import React from "react";
 import { Box, styled, useTheme } from "@mui/material";
 import { tokens } from "../../themes/theme";
 import Layout from "../templates/Layout";
-import BarChart from "../atoms/shapes/Barchart";
+import Barchart from "../atoms/shapes/BarChart";
+
 
 
 const StyledHeader = styled("span")(({ theme }) => ({
@@ -82,7 +83,7 @@ export default function Dashboard() {
               </StyledValueBox>
             </Box>
           </Box>
-          <BarChart />
+          <Barchart />
         </Box>
       </>
     </Layout>
