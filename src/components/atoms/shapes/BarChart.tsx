@@ -1,8 +1,13 @@
 import React from "react";
 import { ResponsiveLine } from "@nivo/line";
-import { useTheme} from '@mui/material';
+import {
+  Autocomplete,
+  Box,
+  TextField,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { tokens } from "../../../themes/theme";
-
 
 // ... existing code ...
 
@@ -37,7 +42,6 @@ const data = [
 
 // ... existing code ...
 
-
 /**
  * 
  * @returns 
@@ -46,57 +50,79 @@ const data = [
 	•	Stock Price Trends: Visualize the price movements of frequently traded assets like $CSMS.
 
  */
-function Barchart({isDashboard = false}: {isDashboard: boolean}) {
-    const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
-    
-    //this is style for website
-    
-    return (
-    <div style={{ width: "700px", height: "300px", backgroundColor: colors.primary[400], borderRadius: '10px', padding: '10px', margin:'100px'}}>
+function Barchart({ isDashboard = false }: { isDashboard: boolean }) {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
+  //this is style for website
+
+  return (
+    <div
+      style={{
+        width: "700px",
+        height: "300px",
+        backgroundColor: colors.primary[400],
+        borderRadius: "10px",
+        padding: "20px",
+        // margin: "100px",
+        margin: '10px'
+      }}
+    >
+      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Typography variant="h3">Popular Book Trands</Typography>
+
+        <Autocomplete
+          disablePortal
+          options={["Harry Potter", "Lord of the Rings", "The Habit"]}
+          sx={{ width: 150}}
+          renderInput={(params) => (
+            <TextField sx={{ fontSize: "20px" }} {...params} label="Book" />
+          )}
+        />
+      </Box>
       <ResponsiveLine
         data={data}
-        enableArea
+        // enableArea
         areaBaselineValue={68}
         lineWidth={3}
-        enableSlices={'x'}
+        enableSlices={"x"}
         enableCrosshair={false}
         animate={true}
         theme={{
-            axis:{
-                domain:{
-                    line:{
-                        stroke: colors.grey[100],
-                    }
-                },
-                legend:{
-                    text:{
-                        fill: colors.grey[100]
-                    }
-                },
-                ticks:{
-                    line:{
-                        stroke: colors.grey[100],
-                        strokeWidth: 1,
-                    },
-                    text:{
-                        fill: colors.grey[100]
-                    }
-                }
+          axis: {
+            domain: {
+              line: {
+                stroke: colors.grey[100],
+              },
             },
-            legends:{
-                text:{
-                    fill: colors.grey[100]
-                }
+            legend: {
+              text: {
+                fill: colors.grey[100],
+              },
             },
-            tooltip:{
-                container:{
-                    color: colors.primary[500]
-                }
-            }
+            ticks: {
+              line: {
+                stroke: colors.grey[100],
+                strokeWidth: 1,
+              },
+              text: {
+                fill: colors.grey[100],
+              },
+            },
+          },
+          legends: {
+            text: {
+              fill: colors.grey[100],
+            },
+          },
+          tooltip: {
+            container: {
+              color: colors.primary[500],
+            },
+          },
         }}
-        colors={{"scheme":'dark2'}}
-        margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+        colors={{ scheme: "dark2" }}
+        margin={{ top: 50, right: 0, bottom: 50, left: 0 }}
         xScale={{ type: "point" }}
         yScale={{
           type: "linear",
@@ -109,27 +135,29 @@ function Barchart({isDashboard = false}: {isDashboard: boolean}) {
         curve="linear"
         axisTop={null}
         axisRight={null}
-        axisBottom={{
-            orient: "bottom",
-            tickSize: 0,
-            tickPadding: 5,
-            tickRotation: 0,
-            legend: isDashboard ? undefined : "transportation", // added
-            legendOffset: 36,
-            legendPosition: "middle",
-          }}
-        axisLeft={{
-            orient: "left",
-            tickValues: 5, // added
-            tickSize: 3,
-            tickPadding: 5,
-            tickRotation: 0,
-            legend: isDashboard ? undefined : "count", // added
-            legendOffset: -40,
-            legendPosition: "middle",
-          }}
-          enableGridX={false}
-          enableGridY={false}
+        axisBottom={null}
+        axisLeft={null}
+        // axisBottom={{
+        //   orient: "bottom",
+        //   tickSize: 0,
+        //   tickPadding: 5,
+        //   tickRotation: 0,
+        //   legend: isDashboard ? undefined : "transportation", // added
+        //   legendOffset: 36,
+        //   legendPosition: "middle",
+        // }}
+        // axisLeft={{
+        //   orient: "left",
+        //   tickValues: 5, // added
+        //   tickSize: 3,
+        //   tickPadding: 5,
+        //   tickRotation: 0,
+        //   legend: isDashboard ? undefined : "count", // added
+        //   legendOffset: -40,
+        //   legendPosition: "middle",
+        // }}
+        enableGridX={false}
+        enableGridY={false}
         pointSize={0}
         pointColor={{ theme: "background" }}
         pointBorderWidth={2}
@@ -139,32 +167,38 @@ function Barchart({isDashboard = false}: {isDashboard: boolean}) {
         enableTouchCrosshair={true}
         useMesh={true}
         legends={[
-            {
-              anchor: "bottom-right",
-              direction: "column",
-              justify: false,
-              translateX: 100,
-              translateY: 0,
-              itemsSpacing: 0,
-              itemDirection: "left-to-right",
-              itemWidth: 80,
-              itemHeight: 20,
-              itemOpacity: 0.75,
-              symbolSize: 12,
-              symbolShape: "circle",
-              symbolBorderColor: "rgba(0, 0, 0, .5)",
-              effects: [
-                {
-                  on: "hover",
-                  style: {
-                    itemBackground: "rgba(0, 0, 0, .03)",
-                    itemOpacity: 1,
-                  },
+          {
+            anchor: "bottom-right",
+            direction: "column",
+            justify: false,
+            translateX: 100,
+            translateY: 0,
+            itemsSpacing: 0,
+            itemDirection: "left-to-right",
+            itemWidth: 80,
+            itemHeight: 20,
+            itemOpacity: 0.75,
+            symbolSize: 12,
+            symbolShape: "circle",
+            symbolBorderColor: "rgba(0, 0, 0, .5)",
+            effects: [
+              {
+                on: "hover",
+                style: {
+                  itemBackground: "rgba(0, 0, 0, .03)",
+                  itemOpacity: 1,
                 },
-              ],
-            },
-          ]}
+              },
+            ],
+          },
+        ]}
       />
+      <div style={{display: 'flex', gap:10}}>
+        <p>1w</p>
+        <p>1m</p>
+        <p>1y</p>
+        <p>All</p>
+      </div>
     </div>
   );
 }

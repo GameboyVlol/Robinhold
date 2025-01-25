@@ -1,6 +1,132 @@
 import { tokens } from "../themes/theme";
 
 
+
+
+export const mockBookData = {
+  "books": [
+    {
+      "id": "1",
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "author": "J.K. Rowling",
+      "genre": "Fantasy",
+      "price": 19.99,
+      "stock": 120,
+      "description": "A young wizard embarks on an adventure at Hogwarts School of Witchcraft and Wizardry.",
+      "image": "https://example.com/images/harry-potter-1.jpg"
+    },
+    {
+      "id": "2",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "Classic",
+      "price": 10.99,
+      "stock": 50,
+      "description": "A story about the mysterious Jay Gatsby, exploring love, wealth, and the American Dream.",
+      "image": "https://example.com/images/great-gatsby.jpg"
+    },
+    {
+      "id": "3",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "genre": "Historical Fiction",
+      "price": 14.99,
+      "stock": 80,
+      "description": "A young girl grows up in the racially charged American South during the 1930s.",
+      "image": "https://example.com/images/to-kill-a-mockingbird.jpg"
+    }
+  ],
+  "orders": [
+    {
+      "orderId": "1001",
+      "userId": "1",
+      "bookId": "1",
+      "quantity": 2,
+      "totalPrice": 39.98,
+      "orderDate": "2025-01-01",
+      "status": "Shipped"
+    },
+    {
+      "orderId": "1002",
+      "userId": "2",
+      "bookId": "2",
+      "quantity": 1,
+      "totalPrice": 10.99,
+      "orderDate": "2025-01-02",
+      "status": "Processing"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "password": "hashedpassword123",
+      "address": "123 Main St, Anytown, USA",
+      "phone": "+1-555-1234"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "password": "hashedpassword456",
+      "address": "456 Oak Ave, Somecity, USA",
+      "phone": "+1-555-5678"
+    }
+  ],
+  "inventory": [
+    {
+      "bookId": "1",
+      "stockLevel": 120,
+      "lowStockThreshold": 20
+    },
+    {
+      "bookId": "2",
+      "stockLevel": 50,
+      "lowStockThreshold": 10
+    },
+    {
+      "bookId": "3",
+      "stockLevel": 80,
+      "lowStockThreshold": 15
+    }
+  ],
+  "commissions": [
+    {
+      "bookId": "1",
+      "commissionRate": 0.1,
+      "commissionAmount": 1.99
+    },
+    {
+      "bookId": "2",
+      "commissionRate": 0.15,
+      "commissionAmount": 1.65
+    },
+    {
+      "bookId": "3",
+      "commissionRate": 0.12,
+      "commissionAmount": 1.80
+    }
+  ],
+  "sales": [
+    {
+      "bookId": "1",
+      "quantitySold": 50,
+      "revenue": 999.50
+    },
+    {
+      "bookId": "2",
+      "quantitySold": 30,
+      "revenue": 329.70
+    },
+    {
+      "bookId": "3",
+      "quantitySold": 40,
+      "revenue": 599.60
+    }
+  ]
+}
+
 export const mockDataTeam = [
   {
     id: 1,
