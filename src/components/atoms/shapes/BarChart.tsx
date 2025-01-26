@@ -53,7 +53,7 @@ const data = [
 function Barchart({ isDashboard = false }: { isDashboard: boolean }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
+  console.log(isDashboard);
   //this is style for website
 
   return (
@@ -65,7 +65,7 @@ function Barchart({ isDashboard = false }: { isDashboard: boolean }) {
         borderRadius: "10px",
         padding: "20px",
         // margin: "100px",
-        margin: '10px'
+        margin: "10px",
       }}
     >
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -74,7 +74,7 @@ function Barchart({ isDashboard = false }: { isDashboard: boolean }) {
         <Autocomplete
           disablePortal
           options={["Harry Potter", "Lord of the Rings", "The Habit"]}
-          sx={{ width: 150}}
+          sx={{ width: 150 }}
           renderInput={(params) => (
             <TextField sx={{ fontSize: "20px" }} {...params} label="Book" />
           )}
@@ -193,7 +193,7 @@ function Barchart({ isDashboard = false }: { isDashboard: boolean }) {
           },
         ]}
       />
-      <div style={{display: 'flex', gap:10}}>
+      <div style={{ display: "flex", gap: 10 }}>
         <p>1w</p>
         <p>1m</p>
         <p>1y</p>

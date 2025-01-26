@@ -26,6 +26,7 @@ function MainSidebar() {
         [`.ps-sidebar-container`]: {
           backgroundColor: colors.primary[400],
           height: "100vh",
+          position: 'fixed'
         },
       }}
       collapsed={isCollapsed}
