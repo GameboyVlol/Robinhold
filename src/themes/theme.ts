@@ -20,7 +20,6 @@ export const themeSettings = (mode) => {
       mode: mode,
       ...(mode === "dark"
         ? {
-            // palette values for dark mode
             primary: {
               main: colors.primary[500],
             },
@@ -37,7 +36,6 @@ export const themeSettings = (mode) => {
             },
           }
         : {
-            // palette values for light mode
             primary: {
               main: colors.primary[100],
             },
@@ -81,6 +79,9 @@ export const themeSettings = (mode) => {
         fontFamily: ["Source Code Pro", "sans-serif"].join(","),
         fontSize: 14,
       },
+      caption: {
+        fontSize: `${12 / 16} rem`,
+      },
     },
     fontSizes: {
       extraLargeHeader: "2.5rem",
@@ -91,10 +92,34 @@ export const themeSettings = (mode) => {
       smallBody: `${14 / 16}rem`,
       smallerBody: `${12 / 16}rem`,
     },
+    fontWeight: {
+      thin: 300,
+      medium: 400,
+      semi: 700,
+      bold: 700,
+    },
+    shape: {
+      borderRadius: 4,
+      borderRadiusMedium: 8,
+      borderRadiusLarge: 12,
+      borderRadiusExtraLarge: 20,
+      tableRowHeight: 64,
+      tableRowHeightCompact: 56,
+      tableRowHeightDense: 48,
+    },
+    boxShadows: {
+      main: "0px 2px 4px rgba(129, 122, 254, 0.2)",
+      card: "0px 2px 10px rgba(28, 25, 78, 0.12)",
+      elevated: "0px 1px 20px rgba(45, 42, 89, 0.1)",
+      popup: "0px 2px 6px rgba(0, 0, 0, 0.25)",
+      primaryHeader: "0px 8px 24px rgba(97, 91, 194, 0.2)",
+      separator: "0px 2px 4px rgba(32, 32, 33, 0.12)", // Notifications header
+      accordionFooter: "inset 0px 2px 4px rgba(32, 32, 33, 0.05)",
+      reverseFooter: "inset 0px -2px 4px rgba(32, 32, 33, 0.05)",
+    },
   };
 };
 
-// context for color mode
 export const ColorModeContext = createContext({
   toggleColorMode: () => {},
 });

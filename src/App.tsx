@@ -6,17 +6,13 @@ import {
   Navigate,
 } from "react-router-dom";
 import { useAuth } from "./contexts/AuthContext";
-// import Dashboard from "./components/pages/Dashboard";
-// import NotFound from "./components/pages/NotFound";
-// import AuthForm from "./components/pages/AuthForm";
-// import Portfolio from "./components/pages/Portfolio";
-// import OrderBook from "./components/pages/OrderBook";
 import {
   Dashboard,
   NotFound,
   AuthForm,
   Portfolio,
-  OrderBook
+  OrderBook,
+  Home
 } from "./components/pages/LazyLoad";
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
@@ -52,6 +48,7 @@ function App() {
             </PublicRoute>
           }
         />
+        <Route path="/home" element={<Home/>}/>
         <Route
           path="/dashboard"
           element={

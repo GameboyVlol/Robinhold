@@ -4,8 +4,6 @@ import { tokens } from "../../themes/theme";
 import Layout from "../templates/Layout";
 import Barchart from "../atoms/shapes/BarChart";
 
-
-
 const StyledHeader = styled("span")(({ theme }) => ({
   lineHeight: 1,
   fontSize: theme.fontSizes.smallerBody,

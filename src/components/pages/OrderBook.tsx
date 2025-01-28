@@ -1,54 +1,67 @@
 import React from "react";
 import Layout from "../templates/Layout";
-import {Paper,TableBody, Box, Table, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
-
-
+import {
+  Paper,
+  TableBody,
+  Box,
+  Table,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Typography,
+} from "@mui/material";
 
 const Order = ({ buyOrders, sellOrders }) => (
-  <Box sx={{
-    p:2
-  }}>
-  <TableContainer component={Paper} className="orders buy-orders">
-    <Typography variant="h6" component="div">Buy Orders</Typography>
-    <Table>
-      <TableHead>
-        <TableRow>
-          <TableCell>Price</TableCell>
-          <TableCell>Quantity</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {buyOrders.map((order, index) => (
-          <TableRow key={index}>
-            <TableCell>{`$${order.price}`}</TableCell>
-            <TableCell>{order.quantity}</TableCell>
+  <Box
+    sx={{
+      p: 2,
+    }}
+  >
+    <TableContainer component={Paper} className="orders buy-orders">
+      <Typography variant="h6" component="div">
+        Buy Orders
+      </Typography>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>Price</TableCell>
+            <TableCell>Quantity</TableCell>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  </TableContainer>
-  <TableContainer component={Paper} className="orders sell-orders">
-    <Typography variant="h6" component="div">Sell Orders</Typography>
-    <Table>
-      <TableHead>
-        <TableRow>
-          <TableCell>Price</TableCell>
-          <TableCell>Quantity</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {sellOrders.map((order, index) => (
-          <TableRow key={index}>
-            <TableCell>{`$${order.price}`}</TableCell>
-            <TableCell>{order.quantity}</TableCell>
+        </TableHead>
+        <TableBody>
+          {buyOrders.map((order, index) => (
+            <TableRow key={index}>
+              <TableCell>{`$${order.price}`}</TableCell>
+              <TableCell>{order.quantity}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+    <TableContainer component={Paper} className="orders sell-orders">
+      <Typography variant="h6" component="div">
+        Sell Orders
+      </Typography>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>Price</TableCell>
+            <TableCell>Quantity</TableCell>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
-  </TableContainer>
-</Box>
+        </TableHead>
+        <TableBody>
+          {sellOrders.map((order, index) => (
+            <TableRow key={index}>
+              <TableCell>{`$${order.price}`}</TableCell>
+              <TableCell>{order.quantity}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  </Box>
 );
-
 
 function OrderBook() {
   const buyOrders = [
