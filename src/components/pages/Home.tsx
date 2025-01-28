@@ -10,6 +10,7 @@ import {
 import React from "react";
 import Topbar from "../organisms/Topbar";
 import Barchart from "../atoms/shapes/BarChart";
+import PrimaryBtn from "../atoms/button/PrimaryBtn";
 
 const StyledRow = styled(Box)(() => ({
   display: "flex",
@@ -140,9 +141,10 @@ function Home() {
             stocks, ETFs, and their options commission-free. Other fees may
             apply. See Robinhood Financial's fee schedule to learn more.
           </Typography>
-          <Button sx={{ bgcolor: "primary.main", color: "white" }}>
+          <PrimaryBtn title="Sign Up to Buy"/>
+          {/* <Button sx={{ bgcolor: "primary.main", color: "white" }}>
             Sign Up to Buy
-          </Button>
+          </Button> */}
         </Paper>
       </Box>
     </Box>
