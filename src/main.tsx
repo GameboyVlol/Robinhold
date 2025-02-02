@@ -2,16 +2,18 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
-import ThemeProviders from "./themes/ThemeProviders";
+import ThemeProviders, { ThemeContextProvider } from "./themes/ThemeProviders";
 import { AuthProvider } from "./contexts/AuthContext";
 
 const ApplicationRoot = () => {
   return (
-    <ThemeProviders>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
-    </ThemeProviders>
+    <ThemeContextProvider>
+      <ThemeProviders>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </ThemeProviders>
+    </ThemeContextProvider>
   );
 };
 

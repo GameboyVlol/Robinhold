@@ -1,15 +1,6 @@
 import React from "react";
 import { ResponsiveLine } from "@nivo/line";
-import {
-  Autocomplete,
-  Box,
-  TextField,
-  Typography,
-  useTheme,
-} from "@mui/material";
-import { tokens } from "../../../themes/theme";
-
-// ... existing code ...
+import { useTheme } from "@mui/material";
 
 const data = [
   {
@@ -40,51 +31,23 @@ const data = [
   },
 ];
 
-// ... existing code ...
-
-/**
- * 
- * @returns 
- * 	•	Portfolio Value Over Time: A line chart showing portfolio value across months.
-	•	Recent Trades Impact: Display how recent trades have affected overall profits or losses.
-	•	Stock Price Trends: Visualize the price movements of frequently traded assets like $CSMS.
-
- */
 function Barchart({ isDashboard = false }: { isDashboard: boolean }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   console.log(isDashboard);
-  //this is style for website
-
   return (
     <div
       style={{
-        width: "700px",
         height: "300px",
-        backgroundColor: colors.primary[400],
         borderRadius: "10px",
         padding: "20px",
-        // margin: "100px",
         margin: "10px",
       }}
     >
-      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography variant="h3">Popular Book Trands</Typography>
-
-        <Autocomplete
-          disablePortal
-          options={["Harry Potter", "Lord of the Rings", "The Habit"]}
-          sx={{ width: 150 }}
-          renderInput={(params) => (
-            <TextField sx={{ fontSize: "20px" }} {...params} label="Book" />
-          )}
-        />
-      </Box>
       <ResponsiveLine
         data={data}
-        // enableArea
         areaBaselineValue={68}
-        lineWidth={3}
+        lineWidth={1}
         enableSlices={"x"}
         enableCrosshair={false}
         animate={true}
@@ -137,25 +100,6 @@ function Barchart({ isDashboard = false }: { isDashboard: boolean }) {
         axisRight={null}
         axisBottom={null}
         axisLeft={null}
-        // axisBottom={{
-        //   orient: "bottom",
-        //   tickSize: 0,
-        //   tickPadding: 5,
-        //   tickRotation: 0,
-        //   legend: isDashboard ? undefined : "transportation", // added
-        //   legendOffset: 36,
-        //   legendPosition: "middle",
-        // }}
-        // axisLeft={{
-        //   orient: "left",
-        //   tickValues: 5, // added
-        //   tickSize: 3,
-        //   tickPadding: 5,
-        //   tickRotation: 0,
-        //   legend: isDashboard ? undefined : "count", // added
-        //   legendOffset: -40,
-        //   legendPosition: "middle",
-        // }}
         enableGridX={false}
         enableGridY={false}
         pointSize={0}

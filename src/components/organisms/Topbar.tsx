@@ -1,52 +1,58 @@
-import { useTheme } from "@emotion/react";
-import { Box, IconButton, InputBase } from "@mui/material";
-import React, { useContext } from "react";
-import { ColorModeContext, tokens } from "../../themes/theme";
-import {
-  Search,
-  NotificationsOutlined,
-  SettingsOutlined,
-  PersonOutline,
-  LightModeOutlined,
-  DarkModeOutlined,
-} from "@mui/icons-material";
+import { styled, Box, Divider, IconButton } from "@mui/material";
+import React from "react";
+import { useThemeContext } from "../../themes/theme";
+import { LightModeOutlined, DarkModeOutlined } from "@mui/icons-material";
+import UserProfile from "../molecules/UserProfile";
+
+const StyledContainer = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  backgroundColor: theme.palette.background.application,
+  justifyContent: "space-between",
+  margin: "0 auto",
+  width: "100%",
+  padding: theme.spacing(1),
+  paddingLeft: theme.spacing(1),
+  paddingRight: theme.spacing(1),
+}));
+const StyledUserContainer = styled("div")({
+  marginLeft: "auto",
+  display: "flex",
+  alignItems: "center",
+});
+const StyledNav = styled("nav")({
+  display: "flex",
+  alignItems: "center",
+  flexGrow: 1,
+});
 
 function Topbar() {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-  const colorMode = useContext(ColorModeContext);
+  const { toggleColorMode, mode } = useThemeContext();
 
   return (
-    <Box display="flex" justifyContent="space-between" p={2}>
-      <Box
-        display="flex"
-        backgroundColor={colors.primary[400]}
-        borderRadius="3px"
-      >
-        <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
-        <IconButton type="button" sx={{ p: 1 }}>
-          <Search />
-        </IconButton>
-      </Box>
-      <Box display="flex">
-        <IconButton onClick={colorMode.toggleColorMode}>
-          {theme.palette.mode === "dark" ? (
-            <LightModeOutlined />
-          ) : (
-            <DarkModeOutlined />
-          )}
-        </IconButton>
-        <IconButton>
-          <NotificationsOutlined />
-        </IconButton>
-        <IconButton>
-          <SettingsOutlined />
-        </IconButton>
-        <IconButton>
-          <PersonOutline />
-        </IconButton>
-      </Box>
-    </Box>
+    <StyledContainer>
+      <Box>Logo</Box>
+      <StyledNav>
+        <StyledUserContainer>
+          <IconButton onClick={toggleColorMode}>
+            {mode === "dark" ? (
+              <LightModeOutlined
+                sx={{ color: (theme) => theme.palette.common.white }}
+              />
+            ) : (
+              <DarkModeOutlined />
+            )}
+          </IconButton>
+          <Divider
+            orientation="vertical"
+            variant="middle"
+            flexItem
+            sx={{ ml: 1 }}
+          />
+          <UserProfile />
+        </StyledUserContainer>
+      </StyledNav>
+    </StyledContainer>
   );
 }
 

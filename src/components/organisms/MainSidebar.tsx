@@ -1,7 +1,6 @@
-import { Box, IconButton, Tooltip, Typography, useTheme } from "@mui/material";
+import { Box, IconButton, Tooltip, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { Menu, MenuItem, Sidebar } from "react-pro-sidebar";
-import { tokens } from "../../themes/theme";
 import {
   Book,
   DashboardOutlined,
@@ -18,13 +17,11 @@ const map_navigation = [
 
 function MainSidebar() {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
   return (
     <Sidebar
       rootStyles={{
         [`.ps-sidebar-container`]: {
-          backgroundColor: colors.primary[400],
+          // backgroundColor: colors.primary[400],
           height: "100vh",
           position: 'fixed'
         },
@@ -34,11 +31,11 @@ function MainSidebar() {
       <Menu
         menuItemStyles={{
           button: {
-            backgroundColor: `${colors.primary[400]}`,
-            color: colors.grey[100],
+            // backgroundColor: `${colors.primary[400]}`,
+            // color: colors.grey[100],
             "&:hover": {
-              backgroundColor: `${colors.primary[200]}`,
-              color: colors.redAccent[500],
+              // backgroundColor: `${colors.primary[200]}`,
+              // color: colors.redAccent[500],
             },
           },
         }}

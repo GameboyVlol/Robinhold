@@ -1,39 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+* {
+  box-sizing: border-box;
+}
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-html,
-body,
-#root,
-.app,
-.content {
+html {
   height: 100%;
-  width: 100%;
-  font-family: "Source Code Pro", "sans-serif";
+  overflow: auto;
+  overflow-y: scroll;
 }
 
-.app {
+body {
+  min-height: 100%;
+  font-family: "Sen", sans-serif;
+  font-size: 16px;
+  font-variant-ligatures: none;
+  padding: 0;
   display: flex;
-  position: relative;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* track */
-::-webkit-scrollbar-track {
-  background: #e0e0e0;
-}
-
-/* handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* handle on hover*/
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  flex-direction: column;
 }

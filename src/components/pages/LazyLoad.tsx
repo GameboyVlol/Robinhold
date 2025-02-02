@@ -6,4 +6,5 @@ export const Portfolio = React.lazy(() => import("./Portfolio"));
 export const AuthForm = React.lazy(() => import("./AuthForm"));
 export const OrderBook = React.lazy(() => import("./OrderBook"));
 
-export const Home = React.lazy(()=> import('./Home'));
+export const Home = React.lazy(() => import("./Home"));
+export const TradeHistory = React.lazy(() => import("./TradeHistory"));

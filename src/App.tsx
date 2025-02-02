@@ -12,7 +12,8 @@ import {
   AuthForm,
   Portfolio,
   OrderBook,
-  Home
+  Home,
+  TradeHistory,
 } from "./components/pages/LazyLoad";
 
 function PrivateRoute({ children }: { children: React.ReactNode }) {
@@ -48,7 +49,7 @@ function App() {
             </PublicRoute>
           }
         />
-        <Route path="/home" element={<Home/>}/>
+        <Route path="/home" element={<Home />} />
         <Route
           path="/dashboard"
           element={
@@ -70,6 +71,14 @@ function App() {
           element={
             <PrivateRoute>
               <OrderBook />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/history"
+          element={
+            <PrivateRoute>
+              <TradeHistory />
             </PrivateRoute>
           }
         />

@@ -1,16 +1,21 @@
 import React from "react";
-import { ColorModeContext, useMode } from "./theme";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { ThemeContext, useColorTheme, useThemeContext } from "./theme";
+import { CssBaseline, ThemeProvider as MainThemeProvider } from "@mui/material";
+
+export function ThemeContextProvider({ children }: { children: React.ReactNode }) {
+  const colorTheme = useColorTheme();
+  return (
+    <ThemeContext.Provider value={colorTheme}>{children}</ThemeContext.Provider>
+  );
+}
 
 function ThemeProviders({ children }: { children: React.ReactNode }) {
-  const [theme, colorMode] = useMode();
+  const { theme } = useThemeContext();
   return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
+      <MainThemeProvider theme={theme}>
+        <CssBaseline enableColorScheme />
         {children}
-      </ThemeProvider>
-    </ColorModeContext.Provider>
+      </MainThemeProvider>
   );
 }
 
