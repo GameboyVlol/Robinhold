@@ -3,6 +3,21 @@
  *
  * @see https://www.figma.com/file/qdwpPfuitJUNinm6mvmCmG/Unleash-application?node-id=7175%3A44590
  */
+
+export const lightColors = {
+    blue: {
+        900: '#1A2F5C',
+        800: '#1E3B73', 
+        700: '#234789',
+        600: '#2853A0',
+        500: '#3D3BF3',
+        400: '#4F7BD3',
+        300: '#7596DE',
+        200: '#9BB5E9',
+        100: '#C2D3F4',
+        50: '#E8F0FF'
+    }
+}
 export const colors = {
   grey: {
       900: '#202021',

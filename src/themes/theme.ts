@@ -2,6 +2,7 @@ import { createContext, useState, useMemo, useContext } from "react";
 import { createTheme } from "@mui/material";
 import darkTheme from "./dark-theme";
 import { colors } from "./colors";
+import { lightColors as clr } from "./colors";
 
 const theme = {
   breakpoints: {
@@ -87,7 +88,7 @@ const theme = {
         disabled: colors.grey[600],
     },
     primary: {
-        main: colors.purple[800],
+        main: clr.blue[900],
         light: colors.purple[700],
         dark: colors.purple[900],
         contrastText: colors.grey[50], // Color used for content when primary.main is used as a background
@@ -146,7 +147,7 @@ const theme = {
 
     background: {
         paper: colors.grey[50],
-        default: colors.grey[50],
+        default: '#000',
         application: colors.grey[300],
         sidebar: colors.purple[800],
         alternative: colors.purple[800], // used on the dark theme to switch primary main to a darker shade

@@ -1,21 +1,28 @@
-import { Paper, styled, Typography } from '@mui/material'
+import {Typography , styled} from '@mui/material'
 import React from 'react'
 
+const StyledContainer = styled('div')(({theme})=>({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: theme.spacing(1)
+}))
 
-const StyledPaper = styled(Paper)(({theme})=>({
-    background: theme.palette.background.paper,
-    padding: theme.spacing(2)
+const StyledTitle = styled(Typography)(({theme})=>({
+  fontWeight: theme.fontWeight.bold,
+  fontSize: theme.fontSizes.mainHeader
+}))
+const StyledValue = styled(Typography)(({theme})=>({
+  fontWeight: theme.fontWeight.semi,
+  fontSize: theme.fontSizes.extraLargeHeader,
+  padding: theme.spacing(1,0)
 }))
 
 function TotalPortfolio() {
   return (
-    <StyledPaper>
-      <Typography variant='h5'>Total Portfolio</Typography>
-      <Typography variant='h1' sx={{
-        fontWeight: (theme)=> theme.fontWeight.semi,
-        fontSize: (theme)=> theme.fontSize
-      }}>$992882</Typography>
-    </StyledPaper>
+    <StyledContainer>
+      <StyledTitle>Portfolio Value</StyledTitle>
+      <StyledValue>$9928.82</StyledValue>
+    </StyledContainer>
   )
 }
 
