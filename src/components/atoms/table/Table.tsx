@@ -11,6 +11,7 @@ export const Table = ({
   <MUITable
     sx={{
       position: "relative",
+      backgroundColor: "black",
       "& tbody tr": {
         height: (theme) =>
           ({

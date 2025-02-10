@@ -54,7 +54,7 @@ const theme = {
     extraLargeHeader: "2.5rem",
     largeHeader: "2rem",
     mediumHeader: "1.5rem",
-    mainHeader: "1.25rem",
+    mainHeader: "1.1rem",
     bodySize: "1rem",
     smallBody: `${14 / 16}rem`,
     smallerBody: `${12 / 16}rem`,

@@ -1,7 +1,10 @@
 export const user_owned_stock = {
   portfolio: [
     {
-      symbol: "TSLA",
+      symbol: {
+        ticker: "TSLA",
+        name: "Tesla Inc"
+      },
       quantity: 10,
       purchasePrice: 800,
       currentValue: 850,
@@ -11,7 +14,10 @@ export const user_owned_stock = {
       },
     },
     {
-      symbol: "AAPL",
+      symbol: {
+        ticker: "AAPL",
+        name: "Apple Inc"
+      },
       quantity: 5,
       purchasePrice: 150,
       currentValue: 145,
@@ -21,7 +27,10 @@ export const user_owned_stock = {
       },
     },
     {
-      symbol: "GOOGL",
+      symbol: {
+        ticker: "FB",
+        name: "Facebook Inc"
+      },
       quantity: 3,
       purchasePrice: 2800,
       currentValue: 2900,
