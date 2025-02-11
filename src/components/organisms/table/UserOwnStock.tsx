@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { Table, TableCell } from "../../atoms/table";
 import { ArrowRight, TrendingUp } from "@mui/icons-material";
+import Estimation from "../../atoms/graph/Estimation";
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   borderRadius: theme.shape.borderRadiusLarge,
@@ -24,7 +25,7 @@ const StyledHeadTable = styled(TableHead)(({ theme }) => ({
 }));
 
 const StyledHeadCell = styled(MUITableCell)({
-  textAlign: "center",  
+  textAlign: "center",
 });
 
 const headCells = [
@@ -60,8 +61,8 @@ function UserOwnStock() {
           </TableRow>
         </StyledHeadTable>
         <TableBody>
-          {user_owned_stock.portfolio.map((row) => (
-            <TableRow key={row.symbol}>
+          {user_owned_stock.portfolio.map((row, idx) => (
+            <TableRow key={idx}>
               <TableCell>
                 <StyledTicker>{row.symbol.ticker}</StyledTicker>
                 <StyledName>{row.symbol.name}</StyledName>
@@ -95,7 +96,7 @@ function UserOwnStock() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    gap:1
+                    gap: 1,
                   }}
                 >
                   <TrendingUp
@@ -112,14 +113,18 @@ function UserOwnStock() {
                 </Box>
               </TableCell>
               <TableCell>
-                <Typography sx={{color: 'red'}}>-3.1%</Typography>
+                <Typography sx={{ color: "red" }}>-3.1%</Typography>
               </TableCell>
               <TableCell>
-                <Typography sx={{color:(theme)=>theme.palette.profit.main}}>
+                <Typography
+                  sx={{ color: (theme) => theme.palette.profit.main }}
+                >
                   13.3%
                 </Typography>
               </TableCell>
-              <TableCell>Graph</TableCell>
+              <TableCell>
+                <Estimation />
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

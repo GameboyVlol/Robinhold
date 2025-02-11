@@ -21,23 +21,40 @@ const StyledProfitLoss = styled("div")(({ theme }) => ({
   display: "flex",
   color: theme.palette.profit.main,
 }));
+
+const StyledPortfolioLayout = styled("div")(({ theme }) => ({
+  display: "flex",
+  padding: theme.spacing(2),
+  gap: theme.spacing(3),
+}));
+
+const StyledAdvanceMicroDevice = styled("div")(({ theme }) => ({
+  width: "30%",
+  padding: theme.spacing(10),
+  backgroundColor: "blue",
+}));
 export default function Portfolio() {
   return (
     <Layout>
-      <>
-        <StyledTitle>Portfolio Summary</StyledTitle>
-        <StyledBox>
-          <StyledValue>$5000.00</StyledValue>
-          <Divider orientation="vertical" flexItem />
-          <StyledProfitLoss>
-            +81,10% <ArrowDropUp />
-          </StyledProfitLoss>
-        </StyledBox>
-        <Typography variant="h4" fontSize="1.5rem" fontWeight="bold">
-          Holdings
-        </Typography>
-        <UserOwnStock />
-      </>
+      <StyledPortfolioLayout>
+        <div style={{ width: "70%" }}>
+          <StyledTitle>Portfolio Summary</StyledTitle>
+          <StyledBox>
+            <StyledValue>$5000.00</StyledValue>
+            <Divider orientation="vertical" flexItem />
+            <StyledProfitLoss>
+              +81,10% <ArrowDropUp />
+            </StyledProfitLoss>
+          </StyledBox>
+          <Typography variant="h4" fontSize="1.5rem" fontWeight="bold">
+            Holdings
+          </Typography>
+          <UserOwnStock />
+        </div>
+        <StyledAdvanceMicroDevice>
+          <Typography>This is Summary</Typography>
+        </StyledAdvanceMicroDevice>
+      </StyledPortfolioLayout>
     </Layout>
   );
 }
