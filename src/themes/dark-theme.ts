@@ -126,7 +126,6 @@ export default {
     primary: {
       main: clr.blue[500],
       light: "#4C4992",
-      // Maybe to move links color to another variable????
       dark: "#9792ED", // Color used for links and on hover for primary buttons
       contrastText: "#EEEEFC", // Color used for content when primary.main is used as a background
     },
@@ -194,13 +193,13 @@ export default {
     },
 
     background: {
-      paper: "#222130", // Background color for all containers
-      default: "#000",
+      paper: colors.navy[100], // Background color for all containers
+      default: colors.navy[500],
       application: "#1A1924",
       sidebar: "#4C4992",
-      alternative: "#4C4992", // used on the dark theme to shwitch primary main to a darker shade
-      elevation1: "#2B2A3C",
-      elevation2: "#2B2A3C",
+      alternative: colors.navy[50], // used on the dark theme to shwitch primary main to a darker shade
+      elevation1: colors.navy[100],
+      elevation2: colors.navy[300],
       // elevation2: '#302E42',
     },
 

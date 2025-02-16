@@ -2,7 +2,6 @@ import { createContext, useState, useMemo, useContext } from "react";
 import { createTheme } from "@mui/material";
 import darkTheme from "./dark-theme";
 import { colors } from "./colors";
-import { lightColors as clr } from "./colors";
 
 const theme = {
   breakpoints: {
@@ -79,96 +78,96 @@ const theme = {
   },
   palette: {
     common: {
-        white: colors.grey[50], // Tooltips text color // Switch base (OFF) // Text color
-        black: colors.grey[900], // Switch track (OFF)
+      white: colors.grey[50], // Tooltips text color // Switch base (OFF) // Text color
+      black: colors.grey[900], // Switch track (OFF)
     },
     text: {
-        primary: colors.grey[900],
-        secondary: colors.grey[800],
-        disabled: colors.grey[600],
+      primary: colors.grey[900],
+      secondary: colors.grey[800],
+      disabled: colors.grey[600],
     },
     primary: {
-        main: clr.blue[900],
-        light: colors.purple[700],
-        dark: colors.purple[900],
-        contrastText: colors.grey[50], // Color used for content when primary.main is used as a background
+      main: colors.dark_blue[900],
+      light: colors.purple[700],
+      dark: colors.purple[900],
+      contrastText: colors.grey[50], // Color used for content when primary.main is used as a background
     },
     secondary: {
-        // Used for purple badges and purple light elements
-        main: colors.purple[800],
-        light: colors.purple[50],
-        dark: colors.purple[900], // Color used for text
-        border: colors.purple[300],
-        contrastText: colors.purple[900], // Color used for text inside badge
+      // Used for purple badges and purple light elements
+      main: colors.purple[800],
+      light: colors.purple[50],
+      dark: colors.purple[900], // Color used for text
+      border: colors.purple[300],
+      contrastText: colors.purple[900], // Color used for text inside badge
     },
     info: {
-        main: colors.blue[500],
-        light: colors.blue[50],
-        dark: colors.blue[800], // Color used for text
-        border: colors.blue[200],
-        contrastText: colors.blue[800], // Color used for text inside alert
+      main: colors.blue[500],
+      light: colors.blue[50],
+      dark: colors.blue[800], // Color used for text
+      border: colors.blue[200],
+      contrastText: colors.blue[800], // Color used for text inside alert
     },
     success: {
-        main: colors.green[600],
-        light: colors.green[50],
-        dark: colors.green[800], // Color used for text
-        border: colors.green[300],
-        contrastText: colors.green[800], // Color used for text inside alert
+      main: colors.green[600],
+      light: colors.green[50],
+      dark: colors.green[800], // Color used for text
+      border: colors.green[300],
+      contrastText: colors.green[800], // Color used for text inside alert
     },
     warning: {
-        main: colors.orange[800],
-        light: colors.orange[100],
-        dark: colors.orange[900], // Color used for text
-        border: colors.orange[500],
-        contrastText: colors.orange[900], // Color used for text inside alert
+      main: colors.orange[800],
+      light: colors.orange[100],
+      dark: colors.orange[900], // Color used for text
+      border: colors.orange[500],
+      contrastText: colors.orange[900], // Color used for text inside alert
     },
     error: {
-        main: colors.red[700], // used on error buttons // used on icons on these elements
-        light: colors.red[50],
-        dark: colors.red[800], // Color used for text
-        border: colors.red[300],
-        contrastText: colors.red[800], // Color used for text inside alert
+      main: colors.red[700], // used on error buttons // used on icons on these elements
+      light: colors.red[50],
+      dark: colors.red[800], // Color used for text
+      border: colors.red[300],
+      contrastText: colors.red[800], // Color used for text inside alert
     },
     web: {
-        main: '#1A4049', // used on sales-related elements
-        contrastText: colors.grey[50], // Color used for inner text
+      main: "#1A4049", // used on sales-related elements
+      contrastText: colors.grey[50], // Color used for inner text
     },
 
     /**
      *  Used for grey badges, hover elements, and grey light elements
      */
     neutral: {
-        main: colors.grey[700],
-        light: colors.grey[100],
-        dark: colors.grey[800],
-        border: colors.grey[500],
-        contrastText: colors.grey[800], // Color used for text inside badge
+      main: colors.grey[700],
+      light: colors.grey[100],
+      dark: colors.grey[800],
+      border: colors.grey[500],
+      contrastText: colors.grey[800], // Color used for text inside badge
     },
 
     background: {
-        paper: colors.grey[50],
-        default: '#000',
-        application: colors.grey[300],
-        sidebar: colors.purple[800],
-        alternative: colors.purple[800], // used on the dark theme to switch primary main to a darker shade
-        elevation1: colors.grey[100],
-        elevation2: colors.grey[200],
+      paper: colors.dark_blue[900],
+      default: colors.dark_blue[900],
+      application: colors.dark_blue[900],
+      sidebar: colors.dark_blue[900],
+      alternative: colors.dark_blue[800], // used on the dark theme to switch primary main to a darker shade
+      elevation1: colors.dark_blue[100],
+      elevation2: colors.dark_blue[200],
     },
 
     action: {
-        // Colors used for Icons and Buttons -> this comes from MUI and we overwriting it with our colors
-        active: colors.action[0.54],
-        hover: colors.action[0.05],
-        hoverOpacity: 0.05,
-        selected: colors.action[0.08],
-        selectedOpacity: 0.08,
-        disabled: colors.action[0.32],
-        disabledBackground: colors.action[0.12],
-        disabledOpacity: 0.38,
-        focus: colors.action[0.12],
-        focusOpacity: 0.12,
-        activatedOpacity: 0.12,
-        alternative: colors.purple[900],
+      // Colors used for Icons and Buttons -> this comes from MUI and we overwriting it with our colors
+      active: colors.action[0.54],
+      hover: colors.action[0.05],
+      hoverOpacity: 0.05,
+      selected: colors.action[0.08],
+      selectedOpacity: 0.08,
+      disabled: colors.action[0.32],
+      disabledBackground: colors.action[0.12],
+      disabledOpacity: 0.38,
+      focus: colors.action[0.12],
+      focusOpacity: 0.12,
+      activatedOpacity: 0.12,
+      alternative: colors.purple[900],
     },
 
     /**
@@ -180,10 +179,10 @@ const theme = {
      * Table colors.
      */
     table: {
-        headerBackground: colors.grey[200],
-        headerHover: colors.grey[300],
-        divider: colors.grey[300],
-        rowHover: colors.grey[100],
+      headerBackground: colors.grey[200],
+      headerHover: colors.grey[300],
+      divider: colors.grey[300],
+      rowHover: colors.grey[100],
     },
 
     /**
@@ -195,9 +194,9 @@ const theme = {
      * Used for the interactive guide spotlight
      */
     spotlight: {
-        border: '#463cfb',
-        outline: '#6058f5',
-        pulse: '#463cfb',
+      border: "#463cfb",
+      outline: "#6058f5",
+      pulse: "#463cfb",
     },
 
     /**
@@ -214,57 +213,57 @@ const theme = {
      * Gradient for the login page
      */
     loginGradient: {
-        from: colors.purple[800],
-        to: colors.purple[950],
+      from: colors.purple[800],
+      to: colors.purple[950],
     },
 
     /**
      * Colors for event log output
      */
     eventLog: {
-        diffAdd: colors.green[800],
-        diffSub: colors.red[800],
-        edited: colors.grey[900],
+      diffAdd: colors.green[800],
+      diffSub: colors.red[800],
+      edited: colors.grey[900],
     },
 
     /**
      * For 'Seen' column on feature flags list and other
      */
     seen: {
-        unknown: colors.grey[100],
-        recent: colors.green[100],
-        inactive: colors.orange[200],
-        abandoned: colors.red[200],
-        primary: colors.purple[100],
+      unknown: colors.grey[100],
+      recent: colors.green[100],
+      inactive: colors.orange[200],
+      abandoned: colors.red[200],
+      primary: colors.purple[100],
     },
 
     /**
      * For Environment Accordion.
      */
     envAccordion: {
-        disabled: colors.grey[100],
-        expanded: colors.grey[200],
+      disabled: colors.grey[100],
+      expanded: colors.grey[200],
     },
 
     /**
      * MUI grey colors
      */
     grey: {
-        // This was to see were these colors are used from MUI
-        // 50: '#A6000E',
-        100: colors.grey[100], // Disabled Switch base (OFF)
-        // 200: '#A6000E',
-        // 300: '#A6000E',
-        // 400: '#A6000E',
-        // 500: '#A6000E',
-        600: colors.grey[800], // slider tooltip background
-        700: colors.grey[800], // Dark tooltip background
-        // 800: '#A6000E',
-        // 900: '#A6000E',
-        // A100: '#A6000E',
-        // A200: '#A6000E',
-        // A400: '#A6000E',
-        // A700: '#A6000E',
+      // This was to see were these colors are used from MUI
+      // 50: '#A6000E',
+      100: colors.grey[100], // Disabled Switch base (OFF)
+      // 200: '#A6000E',
+      // 300: '#A6000E',
+      // 400: '#A6000E',
+      // 500: '#A6000E',
+      600: colors.grey[800], // slider tooltip background
+      700: colors.grey[800], // Dark tooltip background
+      // 800: '#A6000E',
+      // 900: '#A6000E',
+      // A100: '#A6000E',
+      // A200: '#A6000E',
+      // A400: '#A6000E',
+      // A700: '#A6000E',
     },
     variants: colors.variants,
 
@@ -272,29 +271,29 @@ const theme = {
      * Dashboard and charts
      */
     charts: {
-        gauge: {
-            gradientStart: colors.purple[100],
-            gradientEnd: colors.purple[700],
-            background: colors.purple[50],
-            sectionLine: colors.purple[500],
-            text: colors.grey[600],
-        },
-        health: {
-            mainCircleBackground: colors.purple[800],
-            orbit: colors.grey[300],
-            circles: colors.grey[50],
-            text: colors.grey[900],
-            title: colors.grey[50],
-            healthy: colors.purple[800],
-            stale: colors.red[800],
-            potentiallyStale: colors.orange[900],
-            gradientStale: colors.red[300],
-            gradientPotentiallyStale: colors.orange[500],
-        },
-        series: colors.chartSeries,
+      gauge: {
+        gradientStart: colors.purple[100],
+        gradientEnd: colors.purple[700],
+        background: colors.purple[50],
+        sectionLine: colors.purple[500],
+        text: colors.grey[600],
+      },
+      health: {
+        mainCircleBackground: colors.purple[800],
+        orbit: colors.grey[300],
+        circles: colors.grey[50],
+        text: colors.grey[900],
+        title: colors.grey[50],
+        healthy: colors.purple[800],
+        stale: colors.red[800],
+        potentiallyStale: colors.orange[900],
+        gradientStale: colors.red[300],
+        gradientPotentiallyStale: colors.orange[500],
+      },
+      series: colors.chartSeries,
     },
-},
-}
+  },
+};
 
 const tokens = (mode: string) => ({
   ...(mode === "light" ? { ...theme } : { ...darkTheme }),

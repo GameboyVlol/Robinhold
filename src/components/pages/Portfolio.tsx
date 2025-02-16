@@ -1,8 +1,10 @@
 import React from "react";
 import Layout from "../templates/Layout";
-import { Divider, styled, Typography } from "@mui/material";
+import { Box, Divider, styled, Typography } from "@mui/material";
 import { ArrowDropUp } from "@mui/icons-material";
 import UserOwnStock from "../organisms/table/UserOwnStock";
+import PortfolioTab from "../templates/PortfolioTab";
+
 const StyledBox = styled("div")(({ theme }) => ({
   display: "flex",
   padding: theme.spacing(1, 0),
@@ -29,15 +31,16 @@ const StyledPortfolioLayout = styled("div")(({ theme }) => ({
 }));
 
 const StyledAdvanceMicroDevice = styled("div")(({ theme }) => ({
-  width: "30%",
-  padding: theme.spacing(10),
-  backgroundColor: "blue",
+  width: "40%",
+  padding: theme.spacing(2),
+  backgroundColor: theme.palette.background.elevation2,
+  borderRadius: theme.spacing(1)
 }));
 export default function Portfolio() {
   return (
     <Layout>
       <StyledPortfolioLayout>
-        <div style={{ width: "70%" }}>
+        <div style={{ width: "60%" }}>
           <StyledTitle>Portfolio Summary</StyledTitle>
           <StyledBox>
             <StyledValue>$5000.00</StyledValue>
@@ -52,7 +55,11 @@ export default function Portfolio() {
           <UserOwnStock />
         </div>
         <StyledAdvanceMicroDevice>
-          <Typography>This is Summary</Typography>
+          <Box>
+            <Typography variant="h3">TSLA US$98</Typography>
+            <Typography variant="caption">Advanced Micro Devices</Typography>
+          </Box>
+          <PortfolioTab/>
         </StyledAdvanceMicroDevice>
       </StyledPortfolioLayout>
     </Layout>
